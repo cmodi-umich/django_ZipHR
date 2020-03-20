@@ -1,0 +1,27 @@
+<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+
+<form action="/api/" method="post" target="hiddenFrame">
+    <label for="plane_name">Plane Name:</label><br>
+    <input type="text" id="plane_name" name="plane_name"><br>
+    <label for="id">Plane ID:</label><br>
+    <input type="text" id="id" name="id"><br>
+    <label for="num_passengers">Number of Passengers:</label><br>
+    <input type="text" id="num_passengers" name="num_passengers"><br><br>
+    <input type="submit" value="Submit" >
+  </form>
+
+
+{% if airplanes_list %}
+    <ul>
+    {% for airplane in airplanes_list %}
+        <li><a href="/api/{{ airplane.id }}/">{{ airplane.plane_name }} Summary:</a></li>
+        <ul>Plane ID: {{ airplane.id }}</ul>
+        <ul>Number of Passengers: {{ airplane.num_passengers }}</ul>
+        <ul>Fuel Consumption in Liters per Minute: {{ airplane.fuel_consumption }}</ul>
+        <ul>Maximum Minutes to Fly: {{ airplane.max_minutes }}</ul>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No airplanes are available.</p>
+{% endif %}
+
