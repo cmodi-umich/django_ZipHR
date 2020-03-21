@@ -1,5 +1,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+
+<!-- Bootstrap nav bar from https://getbootstrap.com/docs/4.0/components/navbar/ -->
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">ZipAirlines</a>
@@ -20,10 +23,10 @@
     
     <p class="text-center">Input Plane Specifications and then Refresh Page to see List</h1>
     <p class="text-center">Click API or Add "/api" to end of url to see all airplanes</h4>
-    <p class="text-center">Add "/api/plane_id_number" to end of url to see specific airplane and delete or edit it</h6>
+    <p class="text-center">Add "/api/plane_id_number" to end of url to see specific airplane and delete or edit it, or click it from the list</h6>
 </div>
 
-
+<!--Container with form and rendered list of airplanes in model-->
 <div class="container">
     <form action="/api/" method="post" target="hiddenFrame">
         <label for="plane_name">Plane Name:</label><br>
@@ -41,6 +44,7 @@
                 <li><a href="/api/{{ airplane.id }}/">{{ airplane.plane_name }} Summary:</a></li>
                 <ul>Plane ID: {{ airplane.id }}</ul>
                 <ul>Number of Passengers: {{ airplane.num_passengers }}</ul>
+                <ul>Fuel Capacity in Liters: {{ airplane.fuel_capacity }}</ul>
                 <ul>Fuel Consumption in Liters per Minute: {{ airplane.fuel_consumption }}</ul>
                 <ul>Maximum Minutes to Fly: {{ airplane.max_minutes }}</ul>
             {% endfor %}

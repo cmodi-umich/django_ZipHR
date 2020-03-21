@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'numpy',
-    'rest_framework',
-    'airplanes.apps.AirplanesConfig',
+    'numpy', # imported numpy
+    'rest_framework', # uses django rest framework
+    'airplanes.apps.AirplanesConfig', # uses airplane app
 ]
 
 MIDDLEWARE = [
