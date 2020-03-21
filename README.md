@@ -4,7 +4,8 @@ Django API made using Rest Framework to keep track of ZipAirlines's airplanes.
 
 ## Installation
 
-Download from git, make sure every single file copies over.
+Download from git, make sure every single file copies over. \
+Make sure you have python downloaded
 
 ## Usage
 
