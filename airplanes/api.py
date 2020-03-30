@@ -11,6 +11,8 @@ class airplane_list(APIView):
     """
     List all airplanes, or create a new airplane.
     """
+    serializer_class = AirplaneSerializer
+
     def get(self, request, format=None):
         '''
         Get and list all airplanes using serializer to put into JSON format
@@ -30,10 +32,14 @@ class airplane_list(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+
 class airplane_detail(APIView):
     """
     Retrieve, update or delete an airplane.
     """
+    serializer_class = AirplaneSerializer
+
+
     def get_object(self, pk):
         '''
         Get airplane with specific id and return if it works
